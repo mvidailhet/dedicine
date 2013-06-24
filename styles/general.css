@@ -180,7 +180,8 @@ h2{
     width: 62%;
     text-align: left;
     font-size: 12px;
-    color: #9ea7b3;
+    /*color: #9ea7b3;*/
+    color: #4D4D4D;
     word-break: break-all;
 }
 .list .name .innerName{
@@ -194,7 +195,8 @@ h2{
     text-align: right;
     font-size: 11px;
     margin-right: 5px;
-    color: #9ea7b3;
+    /*color: #9ea7b3;*/
+    color: #4D4D4D;
 }
 
 .listElement:hover .name, .listElement:hover .date{
