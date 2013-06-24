@@ -17,6 +17,10 @@
         $link = $currentDirectory . "/" . $fileArr["name"];
         if($fileArr["type"] == "folder")
             $link = "/parsedirectory.php?path=" . urlencode($link);
+        else
+        {
+            $link = str_replace("?", "%3f", $link);
+        }
 
     ?>
         <li class="listElement <?php if($index == 0) echo "first"; ?>">
