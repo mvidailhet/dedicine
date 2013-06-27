@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <title>Zeln DeDiCiNé</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.js" type="text/javascript"></script>
     <link rel="stylesheet" href="styles/general.css">
