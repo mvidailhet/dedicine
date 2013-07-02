@@ -1,8 +1,10 @@
+<?php require_once('config.php');?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>Zeln DeDiCiNé</title>
+  <title>DeDiCiNé v0.3</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.js" type="text/javascript"></script>
     <link rel="stylesheet" href="styles/general.css">
@@ -11,7 +13,7 @@
 <body>
 
 <?php
-include_once("sources/functions.php");
+require_once("sources/functions.php");
 ?>
 
 <div id="header">
@@ -19,50 +21,33 @@ include_once("sources/functions.php");
 </div>
 
 <div id="main">
-
+<?php
+/*if (is_dir(_FILES_BASE_DIRECTORY))
+    if ($dh = opendir(_FILES_BASE_DIRECTORY))
+        while(($file = readdir($dh)) !== false){
+            $path = _FILES_BASE_DIRECTORY.DIRECTORY_SEPARATOR.$file;
+            if (is_dir($path)):
+?>
     <div class="block bigFolder first">
-        <a href="parsedirectory.php?path=./films" class="title"><span class="v-aligner"></span><span class="verticalCenter">Films</span></a>
+        <a href="parsedirectory.php?path=<?php echo $path;?>" class="title"><span class="v-aligner"></span><span class="verticalCenter"><?php echo $file;?></span></a>
         <?php
         $littleList = true;
-        $currentDirectory = "./films";
+        $currentDirectory = $path;
         include("views/filelist.php");
         ?>
     </div>
-
-    <div class="block bigFolder">
-        <a href="parsedirectory.php?path=./series" class="title"><span class="v-aligner"></span><span class="verticalCenter">Séries</span></a>
-        <?php
-        $littleList = true;
-        $currentDirectory = "./series";
-        include("views/filelist.php");
-        ?>
-    </div>
-
-    <div class="block bigFolder">
-        <a href="parsedirectory.php?path=./apps" class="title"><span class="v-aligner"></span><span class="verticalCenter">Apps</span></a>
-        <?php
-        $littleList = true;
-        $currentDirectory = "./apps";
-        include("views/filelist.php");
-        ?>
-    </div>
-
-    <div class="block bigFolder last">
-        <a href="parsedirectory.php?path=./musique" class="title"><span class="v-aligner"></span><span class="verticalCenter">Musique</span></a>
-        <?php
-        $littleList = true;
-        $currentDirectory = "./musique";
-        include("views/filelist.php");
-        ?>
-    </div>
+<?php
+            endif;
+        }*/
+?>
 
     <div class="clear"></div>
 
     <div class="bigList">
-        <h2>Autres fichiers</h2>
+        <h2>Downloads</h2>
         <?php
         $littleList = false;
-        $currentDirectory = ".";
+        $currentDirectory = _FILES_BASE_DIRECTORY;
         include("views/filelist.php");
         ?>
     </div>

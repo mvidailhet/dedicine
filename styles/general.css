@@ -91,10 +91,10 @@ h2{
     text-align: center;
 }
 
-.block.first{
+.block:first{
     margin-left: 4%;
 }
-.block.last{
+.block:last{
     margin-right: 4%;
 }
 
