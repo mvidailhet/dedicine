@@ -234,3 +234,14 @@ body {
     background-position: -142px -2px;
 }
 
+.breadcrumb{
+    background-color: #FFFFFF;
+}
+
+.breadcrumb > li {
+    text-shadow: none;
+}
+.breadcrumb > li a{
+    color: #4D4D4D;
+}
+

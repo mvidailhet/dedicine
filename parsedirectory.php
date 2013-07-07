@@ -58,28 +58,30 @@
         $tmpArr = explode("/", $currentDirectory);
         $arrayLength = count($tmpArr);
         $currentDirectoryName = $tmpArr[$arrayLength - 1];
-
-        if(count($tmpArr) <= 2)
-            $backLink = "index.php";
-        else
+        $breadcrumbArray[] = array("name" => "Home", "link" => "/");
+        $link = ".";
+        for($i = 1; $i < $arrayLength - 1; $i++)
         {
-            $backLink = "";
-            $index = 0;
-            foreach($tmpArr as $pathPart)
-            {
-                if($index == $arrayLength - 1)
-                    break;
-                if($index > 0)
-                    $backLink  .= "/";
-                $backLink .= $pathPart;
-                $index++;
-            }
-            $backLink = "parsedirectory.php?path=".$backLink;
+            if($i > 0)
+                $link  .= "/";
+            $link .= $tmpArr[$i];
+            $breadcrumbArray[] = array("name" => "$tmpArr[$i]", "link" => "parsedirectory.php?path=".$link);
         }
-
     ?>
 
     <div class="container-fluid">
+
+        <ul class="breadcrumb">
+            <li><a href="/">Home</a> <span class="divider">/</span></li>
+            <?php
+            for($i = 1; $i < $arrayLength; $i++) { ?>
+                <?php if($i < $arrayLength - 1){ ?>
+                    <li><a href="<?php echo $breadcrumbArray[$i]["link"]; ?>"><?php echo $breadcrumbArray[$i]["name"]; ?></a> <span class="divider">/</span></li>
+                <?php } else { ?>
+                    <li class="active"><?php echo $tmpArr[$i]; ?></li>
+                <?php } ?>
+            <?php } ?>
+        </ul>
 
         <?php if($debug) { ?>
         <div class="row-fluid">
@@ -102,22 +104,21 @@
             <div class="span12">
                 <div class="block">
                     <div class="title text-center">
-                        <a href="<?php echo $backLink; ?>" class="backButton"><div class="icon backWhite"></div></a>
+                        <a href="<?php echo $breadcrumbArray[$arrayLength - 2]["link"]; ?>" class="backButton"><div class="icon backWhite"></div></a>
                         <?php echo $currentDirectoryName; ?>
                     </div>
-                    <?php
-                    include("application/views/filelist.php");
-                    ?>
+                    <?php include("application/views/filelist.php"); ?>
                 </div>
             </div>
         </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; Dédiciné 2013</p>
+        </footer>
+
     </div>
-
-    <hr>
-
-    <footer>
-        <p>&copy; Dédiciné 2013</p>
-    </footer>
 
     </div><!--/.fluid-container-->
     <script src="http://code.jquery.com/jquery.js"></script>
