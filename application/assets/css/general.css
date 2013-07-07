@@ -1,3 +1,66 @@
+
+/************ BOOTSTRAP *********/
+
+/* Responsive tests
+------------------------- */
+.responsive-utilities-test {
+    margin-top: 5px;
+    margin-left: 0;
+    list-style: none;
+    overflow: hidden; /* clear floats */
+}
+
+.responsive-utilities-test li {
+    position: relative;
+    float: left;
+    width: 31%;
+    height: 43px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 43px;
+    color: #999;
+    text-align: center;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+@media (max-width: 979px)
+{
+    .responsive-utilities-test li {
+        width: 30%;
+    }
+}
+
+.responsive-utilities-test li {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.responsive-utilities-test span {
+    position: absolute;
+    top:    -1px;
+    left:   -1px;
+    right:  -1px;
+    bottom: -1px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.responsive-utilities-test span {
+    color: #468847;
+    background-color: #dff0d8;
+    border: 1px solid #d6e9c6;
+}
+
+
+
+
+/************ END OF BOOTSTRAP *********/
+
+
+
+
 /* test dedicine */
 
 body {
@@ -47,7 +110,7 @@ body {
     background-color: #313B47;
     color: #FFFFFF;
     display: block;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 49px;
     height: 50px;
     position: relative;
@@ -80,6 +143,10 @@ body {
     margin-bottom: 0;
 }
 
+.block .table tr{
+    height: 50px;
+}
+
 .block .table tr:hover{
     background-color: #9ea7b3;
     color: #FFFFFF;
@@ -105,13 +172,41 @@ body {
 .block .table .name{
     font-size: 12px;
     word-break: break-all;
-    width: 70%;
+    line-height: 13px;
 }
 
 .block .table .date{
     text-align: right;
     font-size: 11px;
     width: 20%;
+}
+
+/* for full div blocks */
+.span12 .block .table .name{
+    font-size: 16px;
+}
+.span12 .block .table .date{
+    width: 5%;
+}
+.span12 .block .table .iconContainer{
+    width: 5%;
+}
+
+@media (max-width: 979px)
+{
+    .block .table .date{
+        width: 27%;
+    }
+    .span12 .block .table .date{
+        width: 6%;
+    }
+}
+
+@media (max-width: 767px)
+{
+    .block .table .name{
+        font-size: 16px;
+    }
 }
 
 .block .table tr .icon.folder{

@@ -17,8 +17,8 @@
             $fileName = $fileArr["name"];
             if(isset($littleList) && $littleList)
             {
-                $fileName = substr($fileArr["name"], 0, 35);
-                if(strlen($fileArr["name"]) > 35)
+                $fileName = substr($fileArr["name"], 0, 40);
+                if(strlen($fileArr["name"]) > 40)
                     $fileName .= "...";
             }
 
@@ -32,9 +32,9 @@
 
         ?>
             <tr onclick="window.location = '<?php echo $link; ?>';">
-                <td class="iconContainer <?php if($index == 0) echo "first"; ?>"><span class="icon <?php echo $fileArr["type"] ?>"></span></td>
-                <td class="name <?php if($index == 0) echo "first"; ?>"><?php echo $fileName; ?></td>
-                <td class="date <?php if($index == 0) echo "first"; ?>"><?php echo $fileArr["date"]; ?></td>
+                <td style="vertical-align: middle;" class="iconContainer <?php if($index == 0) echo "first"; ?>"><span class="icon <?php echo $fileArr["type"] ?>"></span></td>
+                <td style="vertical-align: middle;" class="name <?php if($index == 0) echo "first"; ?>"><?php echo $fileName; ?></td>
+                <td style="vertical-align: middle;" class="date <?php if($index == 0) echo "first"; ?>"><?php echo $fileArr["date"]; ?></td>
             </tr>
         <?php
             $index++;
