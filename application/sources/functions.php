@@ -20,7 +20,7 @@ function getFileType($file)
 
 function getDirectoryList($directory)
 {
-    $filesToAvoid = array("styles", "index.php", "parsedirectory.php", "images", "sources", "views", "films", "series", "apps", "musique", "assets");
+    $filesToAvoid = array("index.php", "parsedirectory.php", "films", "series", "apps", "musique", "application");
 
     $files = array();
     if ($handle = opendir($directory))
@@ -43,6 +43,29 @@ function getDirectoryList($directory)
 
         return $files;
     }
+}
+
+function getRootDirectories()
+{
+    $rootDirectories = array();
+    $rootDirectories["films"] = "Films";
+    $rootDirectories["series"] = "Séries";
+    $rootDirectories["musique"] = "Musique";
+    $rootDirectories["apps"] = "Apps";
+    return $rootDirectories;
+}
+
+
+function getSymbolByQuantity($bytes) {
+    $symbols = array('B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+    $exp = floor(log($bytes)/log(1024));
+
+    return sprintf('%.2f '.$symbols[$exp], ($bytes/pow(1024, floor($exp))));
+}
+
+function getRemainingDiskSpace()
+{
+    return getSymbolByQuantity(disk_free_space("/"));
 }
 
 ?>
