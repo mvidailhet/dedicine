@@ -96,6 +96,7 @@
                     <div class="title text-center">
                         <a href="<?php echo $breadcrumbArray[$arrayLength - 2]["link"]; ?>" class="backButton"><div class="icon backWhite"></div></a>
                         <?php echo $currentDirectoryName; ?>
+                        <a href="#" id="cleanupLink">Cleanup</a>
                     </div>
                     <?php include("application/views/filelist.php"); ?>
                 </div>
@@ -113,6 +114,15 @@
     </div><!--/.fluid-container-->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="application/bootstrap/js/bootstrap.js"></script>
+
+    <script type="text/javascript">
+        $("#cleanupLink").click(function(){
+            $.get("/application/sources/cleanup.php?path=<?php echo urlencode($currentDirectory); ?>", function(){
+                window.location.reload();
+            });
+            return false;
+        });
+    </script>
 
 </body>
 </html>

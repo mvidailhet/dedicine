@@ -32,7 +32,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <p class="navbar-text pull-right">
-                    Espace restant : <?php echo getRemainingDiskSpace(); ?>
+                    Libre : <?php echo getRemainingDiskSpace(); ?>
                 </p>
                 <a class="brand" href="/">Dédiciné</a>
                 <div class="nav-collapse collapse">
@@ -90,7 +90,7 @@
             </div>
             <div class="span3">
                 <div class="block">
-                    <a href="parsedirectory.php?path=./films" class="title text-center">Musique</a>
+                    <a href="parsedirectory.php?path=./musique" class="title text-center">Musique</a>
                     <?php
                     $littleList = true;
                     $currentDirectory = "./musique";
@@ -100,7 +100,7 @@
             </div>
             <div class="span3">
                 <div class="block">
-                    <a href="parsedirectory.php?path=./films" class="title text-center">Apps</a>
+                    <a href="parsedirectory.php?path=./apps" class="title text-center">Apps</a>
                     <?php
                     $littleList = true;
                     $currentDirectory = "./apps";

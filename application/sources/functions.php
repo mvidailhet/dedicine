@@ -1,5 +1,32 @@
 <?php
 
+function is_dir_empty($dir) {
+    if (!is_readable($dir)) return NULL;
+    $handle = opendir($dir);
+    while (false !== ($entry = readdir($handle))) {
+        if ($entry != "." && $entry != "..") {
+            return FALSE;
+        }
+    }
+    return TRUE;
+}
+
+function removeEmptyDirectories($directory)
+{
+    if ($handle = opendir($directory))
+        while (false !== ($file = readdir($handle)))
+        {
+            $filePath = $directory . "/" . $file;
+            if ($file != "." && $file != ".." && is_dir($filePath))
+            {
+                if(is_dir_empty($filePath))
+                {
+                    rmdir($filePath);
+                }
+            }
+        }
+}
+
 function getFileType($file)
 {
     $videoExt = array("avi", "mp4", "wmv", "mpg", "mkv");
