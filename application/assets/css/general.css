@@ -1,0 +1,141 @@
+/* test dedicine */
+
+body {
+    background-color: #EAEDF2;
+}
+
+.navbar-inverse .navbar-inner {
+    background-color: #313B47;
+    background-image: none;
+    border: none;
+}
+.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
+/*    background-color: #313B47;*/
+    box-shadow: none;
+}
+
+.navbar-inverse .navbar-text {
+    color: #FFFFFF;
+    margin-right: 10px;
+}
+
+.icon{
+    background: url("/application/assets/images/icons.png") repeat scroll transparent;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+}
+
+.block {
+    font-size: 18px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    color: #4D4D4D;
+    margin-bottom: 30px;
+}
+
+.block .noFiles{
+    padding: 20px 0;
+    text-align: center;
+    color: #9ea7b3;
+}
+
+.block .title{
+    background-color: #313B47;
+    color: #FFFFFF;
+    display: block;
+    font-size: 20px;
+    line-height: 49px;
+    height: 50px;
+    position: relative;
+}
+.block a.title:hover{
+    background-color: #59677A;
+    text-decoration: none;
+}
+.block .backButton{
+    position: absolute;
+    left: 0px;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    background-color: #59677a;
+}
+.block .backButton:hover .icon.backWhite{
+    background-position: -89px -50px;
+}
+
+.block .icon.backWhite{
+    margin-top: 15px;
+    margin-left: 0px;
+    background-position: -49px -50px;
+    height: 20px;
+    width: 22px;
+}
+
+.block .table{
+    margin-bottom: 0;
+}
+
+.block .table tr:hover{
+    background-color: #9ea7b3;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.block .table td.first{
+    border-top: 1px solid #eaedf1;
+}
+
+.block .table td.first{
+    border-top: none;
+}
+
+.block .table .iconContainer{
+    width: 10%;
+    padding: 0;
+    padding-top: 1px;
+    text-align: center;
+    line-height: 27px;
+}
+
+.block .table .name{
+    font-size: 12px;
+    word-break: break-all;
+    width: 70%;
+}
+
+.block .table .date{
+    text-align: right;
+    font-size: 11px;
+    width: 20%;
+}
+
+.block .table tr .icon.folder{
+    background-position: -2px -2px;
+}
+.block .table tr:hover .icon.folder{
+    background-position: -22px -2px;
+}
+.block .table tr .icon.film{
+    background-position: -42px -2px;
+}
+.block .table tr:hover .icon.film{
+    background-position: -62px -2px;
+}
+.block .table tr .icon.tvShow{
+    background-position: -82px -2px;
+}
+.block .table tr:hover .icon.tvShow{
+    background-position: -102px -2px;
+}
+.block .table tr .icon.file{
+    background-position: -122px -2px;
+}
+.block .table tr:hover .icon.file{
+    background-position: -142px -2px;
+}
+

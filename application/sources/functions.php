@@ -20,7 +20,7 @@ function getFileType($file)
 
 function getDirectoryList($directory)
 {
-    $filesToAvoid = array("styles", "index.php", "parsedirectory.php", "images", "sources", "views", "films", "series", "apps", "musique");
+    $filesToAvoid = array("styles", "index.php", "parsedirectory.php", "images", "sources", "views", "films", "series", "apps", "musique", "assets");
 
     $files = array();
     if ($handle = opendir($directory))
