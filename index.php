@@ -19,6 +19,7 @@
 
     <?php
         include_once("application/sources/functions.php");
+        include_once("application/sources/config.php");
         $rootDirectories = getRootDirectories();
     ?>
 
@@ -47,6 +48,24 @@
     </div>
 
     <div class="container-fluid">
+
+        <?php if($debug) { ?>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="block">
+                    <div class="text-center">
+                        <h4>Responsive debug</h4>
+                        <ul class="responsive-utilities-test">
+                            <li>Phone<span class="visible-phone">&#10004; Phone</span></li>
+                            <li>Tablet<span class="visible-tablet">&#10004; Tablet</span></li>
+                            <li>Desktop<span class="visible-desktop">&#10004; Desktop</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php }; ?>
+
         <div class="row-fluid">
 
             <div class="span3">
