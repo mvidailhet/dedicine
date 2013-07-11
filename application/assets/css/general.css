@@ -89,6 +89,18 @@ body {
     display: inline-block;
 }
 
+.v-aligner{
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.verticalCenter{
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .block {
     font-size: 18px;
     -webkit-border-radius: 6px;
@@ -155,10 +167,20 @@ body {
     height: 54px;
 }
 
+.block .table tr a{
+    text-decoration: none;
+    color: #4D4D4D;
+    display: block;
+    height: 100%;
+}
+
 .block .table tr:hover{
     background-color: #9ea7b3;
     color: #FFFFFF;
     cursor: pointer;
+}
+.block .table tr:hover a{
+    color: #FFFFFF;
 }
 
 .block .table td.first{
@@ -181,6 +203,7 @@ body {
     font-size: 12px;
     word-break: break-all;
     line-height: 15px;
+    height: 45px;
 }
 
 .block .table .date{
