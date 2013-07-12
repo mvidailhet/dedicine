@@ -33,7 +33,7 @@
         ?>
             <tr onclick="window.location = '<?php echo $link; ?>';">
                 <td style="vertical-align: middle;" class="iconContainer <?php if($index == 0) echo "first"; ?>"><span class="icon <?php echo $fileArr["type"] ?>"></span></td>
-                <td style="vertical-align: middle;" class="name <?php if($index == 0) echo "first"; ?>"><a href="<?php echo $link; ?>"><span class="v-aligner"></span><span class="verticalCenter"><?php echo $fileName; ?></span></a></td>
+                <td style="vertical-align: middle;" class="name <?php if($index == 0) echo "first"; ?>"><a href="<?php echo $link; ?>"><span class="v-aligner"></span><span class="innerName verticalCenter"><?php echo $fileName; ?></span></a></td>
                 <td style="vertical-align: middle;" class="date <?php if($index == 0) echo "first"; ?>"><?php echo $fileArr["date"]; ?></td>
             </tr>
         <?php
