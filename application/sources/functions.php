@@ -60,6 +60,8 @@ function getDirectoryList($directory)
                 $arr["name"] = $file;
                 $arr["type"] = getFileType($filePath);
                 $filemTime = filemtime($filePath);
+                while(isset($files[$filemTime]))
+                    $filemTime += 1;
                 $arr["date"] = date ("M d", $filemTime);
                 $files[$filemTime] = $arr;
             }
